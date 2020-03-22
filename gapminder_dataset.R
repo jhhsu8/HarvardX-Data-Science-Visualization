@@ -21,19 +21,16 @@ gapminder %>% filter(continent == "Africa" & year == "2012") %>% ggplot(aes(y=li
 library(dplyr)
 library(dslabs)
 data(gapminder)
-
 df <- gapminder %>% filter(continent == "Africa" & year == "2012" & fertility <= 3 & life_expectancy >= 70) %>% select(country, region)
 
 #4. Life expectancy and the Vietnam War - part 1
 library(dplyr)
 library(dslabs)
 data(gapminder)
-
 tab <- gapminder %>% filter(country %in% c("United States", "Vietnam") & year >= "1960" & year <= "2010")
 
 #5. Life expectancy and the Vietnam War - part 2
 tab <- gapminder %>% filter(country %in% c("United States", "Vietnam") & year >= "1960" & year <= "2010")
-
 p <- tab %>% ggplot(aes(y=life_expectancy, x = year, color = country)) + geom_line()
 
 #6. Life expectancy in Cambodia
@@ -57,7 +54,6 @@ library(dplyr)
 library(ggplot2)
 library(dslabs)
 data(gapminder)
-
 daydollars <- gapminder %>% filter(continent == "Africa" & year %in% c("1970","2010") & !is.na(gdp)) %>% 
 mutate(dollars_per_day = gdp/population/365) %>% ggplot(aes(x=dollars_per_day, y=..count..)) + scale_x_continuous(trans="log2") + 
 geom_density() + facet_grid(year ~ .)
@@ -67,7 +63,6 @@ library(dplyr)
 library(ggplot2)
 library(dslabs)
 data(gapminder)
-
 daydollars <- gapminder %>% filter(continent == "Africa" & year %in% c("1970","2010") & !is.na(gdp)) %>% 
 mutate(dollars_per_day = gdp/population/365) %>% ggplot(aes(x=dollars_per_day, y=..count.., fill=region)) + 
 scale_x_continuous(trans="log2") + geom_density(bw = 0.5, position="stack") + facet_grid(year ~ .)
@@ -95,4 +90,3 @@ data(gapminder)
 gapminder_Africa_2010 <- gapminder %>% filter(continent == "Africa" & year %in% c("1970","2010") & !is.na(gdp) & !is.na(infant_mortality)) %>% 
 mutate(dollars_per_day = gdp/population/365) %>% ggplot(aes(x=dollars_per_day, y=infant_mortality, color=region, label=country)) + 
 scale_x_continuous(trans="log2") + geom_text() + facet_grid(year ~ .)
-
