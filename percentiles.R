@@ -1,4 +1,4 @@
-#Quantiles, Percentiles, and Boxplots
+#Quantiles and Percentiles
 
 #1. Vector lengths
 library(dslabs)
