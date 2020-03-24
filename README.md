@@ -1,1 +1,1 @@
-In this course, I learned the basics of data visualization and exploratory data analysis with R.
+In this course, I learned the basics of data visualization and exploratory data analysis with R. I have completed this course. Please view my certificate of achievement at https://courses.edx.org/certificates/a853635a3b8745089018d2a299b2ec20
